@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "LMAAppDelegate.h"
 #import "ContactVO.h"
+#import "Contact.h"
 
 @interface LMAContactsDAO : NSObject
 
@@ -15,5 +16,6 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 - (void) insertContact: (ContactVO*) contactVO;
+- (NSArray*) findAllContacts: (NSArray*) sortDescriptors;
 
 @end

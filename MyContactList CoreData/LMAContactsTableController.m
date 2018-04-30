@@ -12,6 +12,7 @@
 #import "LMAAppDelegate.h"
 #import "LMAContactsController.h"
 #import "Constants.h"
+#import "LMAContactsDAO.h"
 
 @interface LMAContactsTableController ()
 
@@ -60,30 +61,20 @@ LMAContactsController *contactController;
 #pragma mark - Core Data methods
 - (void) loadDataFromDatabase
 {
+    LMAContactsDAO *dao = [[LMAContactsDAO alloc] init];
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     NSString *sortField = [settings stringForKey:kSortField];
     bool sortAscending = [settings boolForKey:kSortDirectionAscending];
     
-    appDelegate = [UIApplication sharedApplication].delegate;
-    context = appDelegate.managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"Contact"
-                                              inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    request.entity = entityDescription;
+//    appDelegate = [UIApplication sharedApplication].delegate;
+//    context = appDelegate.managedObjectContext;
     
     //Specify sorting
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:sortField
                                         ascending:sortAscending];
     NSArray *sortDescriptors = @[sortDescriptor] ;
-    request.sortDescriptors = sortDescriptors;
-    
-    NSError *error;
-    
-    contacts = [[NSArray alloc]
-                initWithArray:[context executeFetchRequest:request
-                                                     error:&error]];
+    contacts = [dao findAllContacts: sortDescriptors];
 }
 
 

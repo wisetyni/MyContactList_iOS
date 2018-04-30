@@ -6,7 +6,6 @@
 //
 
 #import "LMAContactsDAO.h"
-#import "Contact.h"
 
 @implementation LMAContactsDAO
 
@@ -61,6 +60,25 @@ static NSString *const contactImageKey = @"image";
         NSLog(@"Object saved successfully");
         
     }
+}
+
+- (NSArray*) findAllContacts:(NSArray *)sortDescriptors
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"Contact"
+                                            inManagedObjectContext:_context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = entityDescription;
+    
+    request.sortDescriptors = sortDescriptors;
+    
+    NSError *error;
+    
+    NSArray *contacts = [[NSArray alloc]
+                initWithArray:[_context executeFetchRequest:request
+                                                     error:&error]];
+    
+    return contacts;
 }
 
 @end
