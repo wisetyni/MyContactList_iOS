@@ -36,6 +36,8 @@
 		5843727417E35D8300D62E42 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5843727317E35D8300D62E42 /* MapKit.framework */; };
 		5843727717E3662200D62E42 /* LMAMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5843727617E3662200D62E42 /* LMAMapPoint.m */; };
 		5843727A17E3702400D62E42 /* LMAContactsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5843727917E3702400D62E42 /* LMAContactsTableController.m */; };
+		5F4897652097A6AC000B67CD /* LMAContactsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897642097A6AC000B67CD /* LMAContactsDAO.m */; };
+		5F4897662097A6AC000B67CD /* LMAContactsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897642097A6AC000B67CD /* LMAContactsDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		5843727617E3662200D62E42 /* LMAMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAMapPoint.m; sourceTree = "<group>"; };
 		5843727817E3702400D62E42 /* LMAContactsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAContactsTableController.h; sourceTree = "<group>"; };
 		5843727917E3702400D62E42 /* LMAContactsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAContactsTableController.m; sourceTree = "<group>"; };
+		5F4897632097A6AC000B67CD /* LMAContactsDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMAContactsDAO.h; sourceTree = "<group>"; };
+		5F4897642097A6AC000B67CD /* LMAContactsDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMAContactsDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,8 @@
 				5843727617E3662200D62E42 /* LMAMapPoint.m */,
 				3665C9AA17E6BC5100EABE6E /* LMAPhoneTextField.h */,
 				3665C9AB17E6BC5100EABE6E /* LMAPhoneTextField.m */,
+				5F4897632097A6AC000B67CD /* LMAContactsDAO.h */,
+				5F4897642097A6AC000B67CD /* LMAContactsDAO.m */,
 			);
 			name = MyContactList;
 			path = "MyContactList CoreData";
@@ -329,6 +335,7 @@
 				36E30A4117E335F700513660 /* LMAMapController.m in Sources */,
 				36FBD0AC17D982A500AA1D1B /* LMALocationDemoController.m in Sources */,
 				5843727717E3662200D62E42 /* LMAMapPoint.m in Sources */,
+				5F4897652097A6AC000B67CD /* LMAContactsDAO.m in Sources */,
 				367276C717DF48A300EF9743 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4897662097A6AC000B67CD /* LMAContactsDAO.m in Sources */,
 				36FBD09C17D9822000AA1D1B /* MyContactList_CoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
