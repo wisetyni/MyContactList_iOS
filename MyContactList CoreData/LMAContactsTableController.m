@@ -9,7 +9,6 @@
 #import "LMAContactsTableController.h"
 
 #import "Contact.h"
-#import "LMAAppDelegate.h"
 #import "LMAContactsController.h"
 #import "Constants.h"
 #import "LMAContactsDAO.h"
@@ -20,8 +19,7 @@
 
 NSArray *contacts;
 
-LMAAppDelegate *appDelegate;
-NSManagedObjectContext *context;
+LMAContactsDAO *dao;
 
 LMAContactsController *contactController;
 
@@ -31,7 +29,7 @@ LMAContactsController *contactController;
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+      // Custom initialization
     }
     return self;
 }
@@ -61,13 +59,12 @@ LMAContactsController *contactController;
 #pragma mark - Core Data methods
 - (void) loadDataFromDatabase
 {
-    LMAContactsDAO *dao = [[LMAContactsDAO alloc] init];
+    if(!dao){
+     dao = [[LMAContactsDAO alloc] init];
+    }
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     NSString *sortField = [settings stringForKey:kSortField];
     bool sortAscending = [settings boolForKey:kSortDirectionAscending];
-    
-//    appDelegate = [UIApplication sharedApplication].delegate;
-//    context = appDelegate.managedObjectContext;
     
     //Specify sorting
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
@@ -141,9 +138,7 @@ LMAContactsController *contactController;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Contact *contactToDelete = contacts[indexPath.row];
-        [context deleteObject:contactToDelete];
-        NSError *error;
-        [context save:&error];
+        [dao deleteContact: contactToDelete];
         [self loadDataFromDatabase];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         

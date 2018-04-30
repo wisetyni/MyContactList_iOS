@@ -17,5 +17,6 @@
 
 - (void) insertContact: (ContactVO*) contactVO;
 - (NSArray*) findAllContacts: (NSArray*) sortDescriptors;
+- (void) deleteContact: (Contact*) contact;
 
 @end

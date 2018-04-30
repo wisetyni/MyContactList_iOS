@@ -81,4 +81,12 @@ static NSString *const contactImageKey = @"image";
     return contacts;
 }
 
+- (void) deleteContact:(Contact *)contact
+{
+    [_context deleteObject:contact];
+    NSError *error;
+    [_context save:&error];
+    
+}
+
 @end
