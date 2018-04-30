@@ -9,7 +9,7 @@
 #import "LMAContactsController.h"
 #import "LMADateController.h"
 #import "Contact.h"
-#import "LMAAppDelegate.h"
+#import "LMAContactsDAO.h"
 
 @interface LMAContactsController () <LMADateControllerDelegate>
 
@@ -118,8 +118,8 @@ NSDate *birthdate;
 
 -(IBAction)saveContact: (id)sender
 {
-    LMAAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    LMAContactsDAO *dao = [[LMAContactsDAO alloc] init];
+    NSManagedObjectContext *context = [dao context];
 //    Contact *contact = [NSEntityDescription
 //                        insertNewObjectForEntityForName:@"Contact"
 //                        inManagedObjectContext:context];
