@@ -6,6 +6,7 @@
 //
 
 #import "LMAContactsDAO.h"
+#import "Contact.h"
 
 @implementation LMAContactsDAO
 
@@ -30,26 +31,26 @@ static NSString *const contactImageKey = @"image";
     return self;
 }
 
-- (void)insertContact:(Contact *)contact
+- (void)insertContact:(ContactVO *)contactVO
 {
-    Contact *contactCD;
-    if(!contactCD){
-        contactCD =[NSEntityDescription
+    Contact *contact;
+    if(!contact){
+        contact =[NSEntityDescription
                    insertNewObjectForEntityForName:@"Contact"
                    inManagedObjectContext:_context];
         
     }
     
     NSError *error;
-    [contactCD setValue:[contact contactName] forKey:contactNameKey];
-    [contactCD setValue:[contact streetAddress] forKey:contactAddressKey];
-    [contactCD setValue:[contact city] forKey:contactCityKey];
-    [contactCD setValue:[contact state] forKey:contactStateKey];
-    [contactCD setValue:[contact zipCode] forKey:contactZipCodeKey];
-    [contactCD setValue:[contact phoneNumber] forKey:contactPhoneKey];
-    [contactCD setValue:[contact cellNumber] forKey:contactCellPhoneKey];
-    [contactCD setValue:[contact email] forKey:contactEmailKey];
-    [contactCD setValue:[contact birthday] forKey:contactBirthdayKey];
+    [contact setValue:[contactVO contactName] forKey:contactNameKey];
+    [contact setValue:[contactVO streetAddress] forKey:contactAddressKey];
+    [contact setValue:[contactVO city] forKey:contactCityKey];
+    [contact setValue:[contactVO state] forKey:contactStateKey];
+    [contact setValue:[contactVO zipCode] forKey:contactZipCodeKey];
+    [contact setValue:[contactVO phoneNumber] forKey:contactPhoneKey];
+    [contact setValue:[contactVO cellNumber] forKey:contactCellPhoneKey];
+    [contact setValue:[contactVO email] forKey:contactEmailKey];
+    [contact setValue:[contactVO birthday] forKey:contactBirthdayKey];
     
     [_context save:&error];
     if(error !=nil) {

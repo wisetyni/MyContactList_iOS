@@ -7,13 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "LMAAppDelegate.h"
-#import "Contact.h"
+#import "ContactVO.h"
 
 @interface LMAContactsDAO : NSObject
 
 @property (nonatomic, strong) LMAAppDelegate *appDelegate;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
-- (void) insertContact: (Contact*) contact;
+- (void) insertContact: (ContactVO*) contactVO;
 
 @end

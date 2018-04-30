@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Contact.h"
+#import "ContactVO.h"
 #import "LMAPhoneTextField.h"
 
 @interface LMAContactsController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> 
 
-@property (strong, nonatomic) Contact *contact;
+@property (strong, nonatomic) ContactVO *contact;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)backgroundTap:(id)sender;

@@ -38,6 +38,8 @@
 		5843727A17E3702400D62E42 /* LMAContactsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5843727917E3702400D62E42 /* LMAContactsTableController.m */; };
 		5F4897652097A6AC000B67CD /* LMAContactsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897642097A6AC000B67CD /* LMAContactsDAO.m */; };
 		5F4897662097A6AC000B67CD /* LMAContactsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897642097A6AC000B67CD /* LMAContactsDAO.m */; };
+		5F4897692097D4D2000B67CD /* ContactVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897682097D4D2000B67CD /* ContactVO.m */; };
+		5F48976A2097D4D2000B67CD /* ContactVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4897682097D4D2000B67CD /* ContactVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		5843727917E3702400D62E42 /* LMAContactsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAContactsTableController.m; sourceTree = "<group>"; };
 		5F4897632097A6AC000B67CD /* LMAContactsDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMAContactsDAO.h; sourceTree = "<group>"; };
 		5F4897642097A6AC000B67CD /* LMAContactsDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMAContactsDAO.m; sourceTree = "<group>"; };
+		5F4897672097D4D2000B67CD /* ContactVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactVO.h; sourceTree = "<group>"; };
+		5F4897682097D4D2000B67CD /* ContactVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactVO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				36FBD0A917D982A500AA1D1B /* LMALocationDemoController.m */,
 				36FBD0AD17D984E600AA1D1B /* Images.xcassets */,
 				3665C9A717E5E21100EABE6E /* Contact.h */,
+				5F4897672097D4D2000B67CD /* ContactVO.h */,
+				5F4897682097D4D2000B67CD /* ContactVO.m */,
 				3665C9A817E5E21100EABE6E /* Contact.m */,
 				36FBD08417D9822000AA1D1B /* MyContactList_CoreData.xcdatamodeld */,
 				36FBD07917D9822000AA1D1B /* Supporting Files */,
@@ -329,6 +335,7 @@
 				36FBD08617D9822000AA1D1B /* MyContactList_CoreData.xcdatamodeld in Sources */,
 				3665C9A917E5E21100EABE6E /* Contact.m in Sources */,
 				5843727A17E3702400D62E42 /* LMAContactsTableController.m in Sources */,
+				5F4897692097D4D2000B67CD /* ContactVO.m in Sources */,
 				36FBD08317D9822000AA1D1B /* LMAAppDelegate.m in Sources */,
 				3665C9AC17E6BC5100EABE6E /* LMAPhoneTextField.m in Sources */,
 				36FBD0AB17D982A500AA1D1B /* LMAContactsController.m in Sources */,
@@ -344,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F48976A2097D4D2000B67CD /* ContactVO.m in Sources */,
 				5F4897662097A6AC000B67CD /* LMAContactsDAO.m in Sources */,
 				36FBD09C17D9822000AA1D1B /* MyContactList_CoreDataTests.m in Sources */,
 			);

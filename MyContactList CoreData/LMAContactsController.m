@@ -8,7 +8,7 @@
 
 #import "LMAContactsController.h"
 #import "LMADateController.h"
-#import "Contact.h"
+#import "ContactVO.h"
 #import "LMAContactsDAO.h"
 
 @interface LMAContactsController () <LMADateControllerDelegate>
@@ -119,38 +119,21 @@ NSDate *birthdate;
 -(IBAction)saveContact: (id)sender
 {
     LMAContactsDAO *dao = [[LMAContactsDAO alloc] init];
-    NSManagedObjectContext *context = [dao context];
-//    Contact *contact = [NSEntityDescription
-//                        insertNewObjectForEntityForName:@"Contact"
-//                        inManagedObjectContext:context];
-    if(!_contact){
-        _contact =[NSEntityDescription
-                   insertNewObjectForEntityForName:@"Contact"
-                   inManagedObjectContext:context];
-
-    }
-    NSError *error;
-    [_contact setValue:_txtName.text forKey:@"contactName"];
-    [_contact setValue:_txtAddress.text forKey:@"streetAddress"];
-    [_contact setValue:_txtCity.text forKey:@"city"];
-    [_contact setValue:_txtState.text forKey:@"state"];
-    [_contact setValue:_txtZip.text forKey:@"zipCode"];
-    [_contact setValue:_txtPhone.text forKey:@"phoneNumber"];
-    [_contact setValue:_txtCell.text forKey:@"cellNumber"];
-    [_contact setValue:_txtEmail.text forKey:@"email"];
-    [_contact setValue:birthdate forKey:@"birthday"];
-    NSData *imageData = UIImagePNGRepresentation(_imgContactPicture.image);
-    [_contact setValue:imageData forKey:@"image"];
+    _contact = [[ContactVO alloc] init];
     
-    [context save:&error];
-    if(error !=nil) {
-        NSLog(@"Error saving object: %@", error.description);
-        
-    }
-    else {
-        NSLog(@"Object saved successfully");
-        
-    }
+    [_contact setContactName: _txtName.text];
+    [_contact setStreetAddress: _txtAddress.text];
+    [_contact setCity: _txtCity.text];
+    [_contact setState: _txtState.text];
+    [_contact setZipCode: _txtZip.text];
+    [_contact setPhoneNumber: _txtPhone.text];
+    [_contact setCellNumber: _txtCell.text];
+    [_contact setEmail: _txtEmail.text];
+    [_contact setBirthday: birthdate];
+    NSData *imageData = UIImagePNGRepresentation(_imgContactPicture.image);
+    [_contact setImage: imageData];
+    
+    [dao insertContact: _contact];
 }
 - (IBAction)changePicture:(id)sender {
     if([UIImagePickerController isSourceTypeAvailable:                            //1

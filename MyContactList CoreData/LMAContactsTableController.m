@@ -125,8 +125,8 @@ LMAContactsController *contactController;
 //                reuseIdentifier:CellIdentifier];
 //    }
     Contact *contact = contacts[indexPath.row];
-    NSString *name = contact.cellNumber;
-    NSString *city = contact.email;
+    NSString *name = contact.contactName;
+    NSString *city = contact.city;
     cell.textLabel.text = name; //[contact contactName];
     cell.detailTextLabel.text = city;// [contact city];
     return cell;
